@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "imgbb-upload",
+    "name": "ImgBB Image Upload",
+    "description": "Upload images to ImgBB with drag & drop, previews, and one-click copy for URL, BBCode, HTML and Markdown.",
+    "icon": "image",
+    "entry": "/tools/imgbb-upload/index.html",
+    "enabled": true
+  }
+]
