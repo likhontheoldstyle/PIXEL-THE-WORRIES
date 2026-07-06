@@ -1,0 +1,124 @@
+/* src/tools/imgbb-upload/style.css
+   Scoped styles for the ImgBB Upload tool. Relies on global tokens
+   defined in /styles/global.css (colors, glass, neon utilities). */
+
+.tool-page {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.tool-back {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.tool-back:hover { color: var(--neon-primary); }
+
+.tool-title { display: flex; align-items: center; gap: 0.6rem; }
+.tool-title h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text);
+}
+.tool-icon { font-size: 1.4rem; }
+
+.tool-main {
+  max-width: 960px;
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.uploader {
+  border: 1.5px dashed rgba(0, 212, 255, 0.35);
+  border-radius: 18px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+.uploader:hover,
+.uploader.drag-over {
+  border-color: var(--neon-primary);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.upload-icon { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.upload-title { font-size: 1.1rem; color: var(--text); margin: 0.25rem 0; }
+.upload-sub { color: var(--muted); font-size: 0.85rem; margin: 0.35rem 0; }
+.upload-hint { color: var(--muted); font-size: 0.78rem; margin-top: 0.9rem; }
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.upload-card {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-preview {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #05070d;
+  overflow: hidden;
+}
+.card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-progress {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+}
+.card-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--neon-secondary), var(--neon-primary));
+  transition: width 0.2s ease;
+}
+
+.card-body { padding: 0.85rem 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.card-filename {
+  font-size: 0.82rem;
+  color: var(--text);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-status { font-size: 0.78rem; color: var(--muted); min-height: 1em; }
+.card-status.error { color: #ff6b8a; }
+.card-status.success { color: #4ee6a5; }
+
+.card-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.link-btn {
+  font-size: 0.72rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(0, 212, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.link-btn:hover { background: rgba(0, 212, 255, 0.16); border-color: var(--neon-primary); }

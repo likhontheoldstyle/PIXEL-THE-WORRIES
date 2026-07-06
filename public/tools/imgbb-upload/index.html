@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ImgBB Image Upload — PIXEL Tools</title>
+<link rel="icon" href="/assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body class="tool-page">
+
+  <div class="bg-grid"></div>
+
+  <header class="tool-header glass">
+    <a href="/index.html" class="tool-back">← Back to PIXEL</a>
+    <div class="tool-title">
+      <span class="tool-icon">🖼️</span>
+      <h1>ImgBB Image Upload</h1>
+    </div>
+  </header>
+
+  <main class="tool-main">
+    <section class="uploader glass" id="dropzone">
+      <input type="file" id="fileInput" accept="image/*" multiple hidden />
+      <div class="uploader-inner">
+        <div class="upload-icon">⬆️</div>
+        <p class="upload-title">Drag &amp; drop images here</p>
+        <p class="upload-sub">or</p>
+        <button class="btn btn-neon" id="browseBtn" type="button">Browse Files</button>
+        <p class="upload-hint">PNG, JPG, GIF, WEBP — multiple files supported</p>
+      </div>
+    </section>
+
+    <section class="results" id="results" aria-live="polite"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="upload-card glass">
+      <div class="card-preview">
+        <img class="card-img" alt="Uploaded preview" />
+        <div class="card-progress"><div class="card-progress-bar"></div></div>
+      </div>
+      <div class="card-body">
+        <p class="card-filename"></p>
+        <div class="card-status"></div>
+        <div class="card-links" hidden>
+          <button class="link-btn" data-copy="url">Copy URL</button>
+          <button class="link-btn" data-copy="delete">Copy Delete URL</button>
+          <button class="link-btn" data-copy="bbcode">Copy BBCode</button>
+          <button class="link-btn" data-copy="html">Copy HTML</button>
+          <button class="link-btn" data-copy="markdown">Copy Markdown</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
